@@ -2,12 +2,12 @@ package main
 
 import (
 	"fmt"
-	leetcode1768 "go-leetcode/ArrayString"
+	leetcode1071 "go-leetcode/ArrayString"
 )
 
 func main() {
 
-	result := leetcode1768.MergeAlternately("abc", "abcde")
+	result := leetcode1071.GCDOfStrings("LEET", "CODE")
 	fmt.Println(result)
 
 }
