@@ -1,4 +1,4 @@
-package leetcode1768
+package ArrayString
 
 import (
 	"strings"
