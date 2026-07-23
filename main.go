@@ -2,14 +2,20 @@ package main
 
 import (
 	"fmt"
-	leetcode365 "go-leetcode/ArrayString"
+	leetcode151 "go-leetcode/ArrayString"
 )
 
 func main() {
 
-	myString := "ai"
+	//s1 := "hello world"
 
-	result := leetcode365.ReverseVowels(myString)
+	// s2 := "the sky is blue"
+
+	//s3 := "  hello world  "
+
+	s4 := "a good!   example"
+
+	result := leetcode151.ReverseWords(s4)
 
 	fmt.Println(result)
 
