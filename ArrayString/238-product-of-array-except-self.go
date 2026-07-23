@@ -11,7 +11,7 @@ func ProductExceptSelf(nums []int) []int {
 
 	for i < arrayLength {
 
-		if j == 0 {
+		if j < 0 {
 			//append into result
 			result = append(result, storeHere)
 
