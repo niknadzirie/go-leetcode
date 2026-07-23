@@ -2,21 +2,15 @@ package main
 
 import (
 	"fmt"
-	leetcode151 "go-leetcode/ArrayString"
+	leetcode238 "go-leetcode/ArrayString"
 )
 
 func main() {
 
-	//s1 := "hello world"
+	nums := []int{-1, 1, 0, -3, 3}
 
-	// s2 := "the sky is blue"
+	myNumber := leetcode238.ProductExceptSelf(nums)
 
-	//s3 := "  hello world  "
-
-	s4 := "a good!   example"
-
-	result := leetcode151.ReverseWords(s4)
-
-	fmt.Println(result)
+	fmt.Println(myNumber)
 
 }
