@@ -2,32 +2,41 @@ package ArrayString
 
 func ProductExceptSelf(nums []int) []int {
 
-	var result []int
 	arrayLength := len(nums)
-	maxIndex := arrayLength - 1
-	j := maxIndex
-	i := 0
-	storeHere := 1
+	result := make([]int, arrayLength)
+	LS := make([]int, arrayLength)
+	RS := make([]int, arrayLength)
+	j := arrayLength - 1
 
-	for i < arrayLength {
+	leftSide := 1
+	rigthSide := 1
 
-		if j < 0 {
-			//append into result
-			result = append(result, storeHere)
+	//getting the LS and RS multiplication
+	for i := 0; i < arrayLength; i++ {
 
-			//reset
-			i++
-			j = maxIndex
-			storeHere = 1
+		if i == 0 {
+			leftSide *= 1
+			LS[i] = leftSide
+		} else {
+			leftSide *= nums[i-1]
+			LS[i] = leftSide
+		}
+
+		if j == arrayLength-1 {
+			rigthSide *= 1
+			RS[j] = rigthSide
+			j--
 			continue
 		}
 
-		//skip self multiplication
-		if j != i {
-			storeHere *= nums[j]
-		}
+		rigthSide *= nums[j+1]
+		RS[j] = rigthSide
 		j--
+	}
 
+	//insert the multiplication except self into result
+	for i := 0; i < arrayLength; i++ {
+		result[i] = LS[i] * RS[i]
 	}
 
 	return result
