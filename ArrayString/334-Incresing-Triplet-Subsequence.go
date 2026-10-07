@@ -1,44 +1,30 @@
 package ArrayString
 
+import "math"
+
 func IncreasingTriplet(nums []int) bool {
 
-	ln := len(nums)
-	minNum := 0
-	maxNum := 0
+	first := math.Inf(1)
+	second := math.Inf(1)
 
-	minIndex := 0
-	midIndex := 0
-	maxIndex := 0
+	count := len(nums)
 
-	for i := 0; i < ln; i++ {
-		j := ln - 1 - i
+	for i := 0; i < count; i++ {
 
-		if i == 0 {
-			minNum, minIndex = nums[i], i
+		currentVal := float64(nums[i])
+
+		if currentVal <= first {
+			first = currentVal
 		}
 
-		if j == ln-1 {
-			maxNum, maxIndex = nums[j], j
+		if currentVal > first && currentVal <= second {
+			second = currentVal
 		}
 
-		if nums[i] < minNum {
-			minNum, minIndex = nums[i], i
-		}
-
-		if nums[j] > maxNum {
-			maxNum, maxIndex = nums[j], j
-		}
-
-	}
-
-	for i := 0; i < ln; i++ {
-		if minNum < nums[i] && nums[i] < maxNum {
-			midIndex = i
-		}
-
-		if minIndex < midIndex && midIndex < maxIndex {
+		if first < second && second < currentVal {
 			return true
 		}
+
 	}
 
 	return false
