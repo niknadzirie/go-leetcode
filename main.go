@@ -2,14 +2,15 @@ package main
 
 import (
 	"fmt"
-	leetcode238 "go-leetcode/ArrayString"
+	leetcode443 "go-leetcode/ArrayString"
 )
 
 func main() {
 
-	nums := []int{20, 100, 10, 12, 5, 13}
+	var myByte = []byte{'a', 'a', 'b', 'b', 'c', 'c', 'c'}
+	//var myByte = []byte{'a'}
 
-	myNumber := leetcode238.IncreasingTriplet(nums)
+	myNumber := leetcode443.Compress(myByte)
 
 	fmt.Println(myNumber)
 
